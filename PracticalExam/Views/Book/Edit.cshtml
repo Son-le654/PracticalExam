@@ -1,0 +1,32 @@
+﻿@model PracticalExam.Models.Book
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Book", method: FormMethod.Post))
+{
+    <label>Title</label>
+    @Html.TextBoxFor(m => m.Title);
+    <br />
+
+    <label>Author</label>
+    @Html.TextBoxFor(m => m.Author);
+    <br />
+
+    <label>Publisher</label>
+    @Html.TextBoxFor(m => m.Publisher);
+    <br />
+
+    <label>Genre</label>
+    @Html.TextBoxFor(m => m.Genre);
+    <br />
+
+    <label>Price</label>
+    @Html.TextBoxFor(m => m.Price);
+    <br />
+
+    <button type="submit">Edit</button>
+    <button>@Html.ActionLink("Cancel", "Index", "Book") </button>
+
+}
+

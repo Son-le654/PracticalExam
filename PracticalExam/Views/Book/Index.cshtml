@@ -1,0 +1,37 @@
+﻿@model List<PracticalExam.Models.Book>
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="panel panel-success">
+    <div class="panel-heading">Book Management @Html.ActionLink("Create New", "Create", "Book")</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th scope="row">@item.Title</th>
+                    <td>@item.Author</td>
+                    <td>@item.Publisher</td>
+                    <td>@item.Genre</td>
+                    <td>@item.Price</td>
+                    <td>@Html.ActionLink("Edit", "Edit", "Book", new { id = item.Id }, null) | @Html.ActionLink("Delete", "Delete", "Book", new { id = item.Id }, new { onclick= "return confirm('Are you sure?');" })</td> 
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
